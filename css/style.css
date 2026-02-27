@@ -177,12 +177,20 @@ select:focus-visible {
     background-image: url(../assets/img/icon.svg);
     background-repeat: no-repeat;
     background-position: right 10px center;
-    /* Решта стилів як у input */
+    background-size: 18px 18px;
+    /* Відступ справа, щоб текст не наїжджав на стрілку */
+    padding-right: 28px;
+    padding-left: 10px;
     border: 1px solid #E4E4E4;
     border-radius: var(--main-border-radius);
-    font-size: inherit;
     height: 38px;
-    padding: 0 10px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fff;
+    color: var(--main-font-color);
+    font-family: var(--second-font-family);
+    font-size: 15px;
+    line-height: 1.467;
 }
 
 .btn {
