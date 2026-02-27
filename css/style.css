@@ -50,7 +50,7 @@ body {
 
 .title_2 {
     font-size: 24px;
-    line-height: 1.33;
+    line-height: 1.333;
     font-weight: 500;
     color: #1c1c1c;
     margin-bottom: 20px;
@@ -187,7 +187,8 @@ select:focus-visible {
     width: 100%;
     cursor: pointer;
     background-color: #fff;
-    color: var(--main-font-color);
+    color: #54545480;
+    /* letter-spacing: -0.2px; */
     font-family: var(--second-font-family);
     font-size: 15px;
     line-height: 1.467;
@@ -213,7 +214,6 @@ select:focus-visible {
     text-align: center;
     font-size: 13px;
     color: #969696;
-    /* Сірий колір як на макеті */
     margin: 22px 45px 20px 45px;
     line-height: 1.385;
 }
@@ -223,7 +223,6 @@ select:focus-visible {
     font-family: var(--second-font-family);
     color: var(--background-btn);
     text-decoration: none;
-    /* Прибираємо підкреслення */
     font-weight: 500;
 }
 
@@ -238,4 +237,80 @@ select:focus-visible {
     color: #545454;
     margin: 20px 0 1px 0;
     line-height: 1.467;
+}
+
+/* Блок аватара */
+.avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Створюємо жорсткий контейнер для фото 80x80 */
+.avatar-preview {
+    width: 80px;
+    /* Те, що ти казав */
+    height: 80px;
+    flex-shrink: 0;
+    /* Щоб флекс не стискав коло, якщо тексту поруч багато */
+    border-radius: 50%;
+    overflow: hidden;
+    /* Обрізає все, що більше 80px */
+    border: 1px solid #E4E4E4;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Це магія: розтягує фото без спотворення пропорцій */
+    display: block;
+}
+
+.avatar-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Кнопка завантаження (з камерою) */
+.upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    /* Приблизно як на макеті */
+    height: 34px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    cursor: pointer;
+    background: url('../assets/img/camera.svg') no-repeat center right 10px;
+    /* Додай іконку камери */
+}
+
+/* Кнопка видалення (кошик) */
+.btn-delete {
+    width: 34px;
+    height: 34px;
+    background: #fff url('../assets/img/trash.svg') no-repeat center;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.upload-text {
+    width: 100%;
+    font-size: 12px;
+    color: #969696;
+    margin-top: 4px;
+}
+
+/* Кнопка Update */
+.btn_update {
+    width: auto;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: 500;
 }

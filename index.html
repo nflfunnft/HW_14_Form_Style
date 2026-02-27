@@ -85,9 +85,61 @@
                     </div>
                     <div class="side">
                         <h2 class="title_2">Profile</h2>
-                        <div class="row">
-                            <button class="btn btn_min">Sign Up</button>
-                        </div>
+                        <form class="form">
+                            <div class="avatar-row">
+                                <div class="avatar-preview">
+                                    <img src="./assets/img/image.png" alt="Profile avatar">
+                                </div>
+                                <div class="avatar-controls">
+                                    <div class="upload-field">
+                                        <label for="avatar-upload" class="upload-label">
+                                            <input type="file" id="avatar-upload" class="visually-hidden">
+                                            <span class="camera-icon"></span> 
+                                        </label>
+                                    </div>
+                                    <button type="button" class="btn-delete"></button>
+                                    <p class="upload-text">Up to 1 MB (300x300 px)</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col_half">
+                                    <label for="prof-name" class="label">Name</label>
+                                    <input type="text" id="prof-name">
+                                </div>
+                                <div class="col col_half">
+                                    <label for="prof-email" class="label">E-mail</label>
+                                    <input type="email" id="prof-email">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col_half">
+                                    <label for="prof-country" class="label">Country</label>
+                                    <select id="prof-country" class="select">
+                                        <option value="" disabled selected hidden>Select</option>
+                                        <option value="ua">UkraineUkraineUkraineUkraineUkraineUkraine</option>
+                                    </select>
+                                </div>
+                                <div class="col col_half">
+                                    <label for="prof-city" class="label">City</label>
+                                    <input type="text" id="prof-city">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col col_half">
+                                    <label for="prof-zip" class="label">Zip Code</label>
+                                    <input type="text" id="prof-zip">
+                                </div>
+                                <div class="col col_half">
+                                    <label for="prof-phone" class="label">Phone Number</label>
+                                    <input type="tel" id="prof-phone">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn_update">Update</button>
+                        </form>
                     </div>
                 </section>
             </div>
