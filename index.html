@@ -43,29 +43,44 @@
                             <div class="form__gender gender">
                                 <div class="gender__item">
 
-                                    <label>
+                                    <label for="gender-male">
 
-                                        <input type="radio" name="gender">
+                                        <input type="radio" name="gender" id="gender-male" value="male" class="visually-hidden">
                                         <span class="gender__check"></span>
-                                        Men
+                                        Male
 
                                     </label>
-                                    <label>
-                                        <input type="radio" name="gender">
+                                    <label for="gender-female">
+                                        
+                                        <input type="radio" name="gender" id="gender-female" value="female" class="visually-hidden">
                                         <span class="gender__check"></span>
-                                        Women
+                                        Female
 
                                     </label>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col col_half"></div>
-                                    <div class="col col_half"></div>
+                                    <div class="col col_half">
+                                        <label for="country" class="label">Country</label>
+                                        <select id="country" class="select">
+                                            <option value="">Select</option>
+                                            <option value="ukraine">Ukraine</option>
+                                        </select>
+                                    </div>
+                                    <div class="col col_half">
+                                        <label for="city" class="label">City</label>
+                                        <input type="text" id="city" placeholder="Your city">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <button class="btn btn_full">Sign Up</button>
                             </div>
+                            <p class="terms-text">By clicking the 'Sign Up' button, you confirm that you accept our <br>
+                                <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>
+                            </p>
+                            <hr class="divider">
+                            <p class="login-offer">Have an account? <a href="#">Log In</a></p>
                         </form>
                     </div>
                     <div class="side">

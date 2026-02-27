@@ -35,11 +35,15 @@ body {
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
+    /* Дозволяє карткам переноситися на новий рядок */
 }
 
 .side {
     background: #fff;
-    width: 570px;
+    /* width: 570px; */
+    width: 100%;
+    max-width: 570px;
     border-radius: 6px;
     padding: 35px 35px 15px 35px;
 }
@@ -72,6 +76,12 @@ body {
     width: 100%;
 }
 
+.text {
+    font-size: 13px;
+    margin-top: 7px;
+    color: #969696;
+}
+
 .label {
     margin-bottom: 7px;
     line-height: 1.47;
@@ -83,7 +93,6 @@ input {
     font-size: inherit;
     height: 38px;
     padding: 0 10px;
-
 }
 
 input:focus-visible {
@@ -123,12 +132,41 @@ input:focus-visible {
     transition: all 0.3s;
 }
 
-input[type="radio"] {
+/* input[type="radio"] {
     display: none;
+} */
+
+/* input[type="radio"]:checked~.gender__check::after {
+    opacity: 1;
+} */
+
+/* 1. Замість display: none використовуємо цей клас */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
-input[type="radio"]:checked~.gender__check::after {
+/* 2. Твоя логіка відображення точки залишається майже такою самою */
+/* Тільки тепер ми звертаємося до інпуту через клас */
+.visually-hidden:checked~.gender__check::after {
     opacity: 1;
+    transform: scale(1);
+    /* Можна додати легкий ефект збільшення */
+}
+
+/* 3. ВАЖЛИВО: Додаємо стиль для фокусу, щоб користувач бачив, де він знаходиться */
+.visually-hidden:focus-visible~.gender__check {
+    outline: 2px solid var(--background-btn);
+    outline-offset: 3px;
+    border-radius: 50%;
 }
 
 .btn {
