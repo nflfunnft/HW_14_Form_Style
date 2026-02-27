@@ -323,3 +323,37 @@ select:focus-visible {
     max-width: 150px;
     max-height: 38px;
 }
+
+/* Ефект при наведенні (Hover) */
+.btn:hover {
+    filter: brightness(0.9);
+    /* Робить кнопку на 10% темнішою */
+}
+
+/* Ефект при натисканні (Active) */
+.btn:active {
+    filter: brightness(0.8);
+    /* Ще трохи темніше при кліку */
+    transform: translateY(1px);
+    /* Кнопка ніби "продавлюється" */
+}
+
+/* Для кнопки завантаження та видалення */
+.upload-label:hover {
+    border-color: var(--background-btn);
+}
+
+.btn-delete:hover {
+    border-color: #f40606;
+}
+
+.btn-delete:active {
+    transform: scale(0.9);
+    /* Кнопка візуально трохи стискається при кліку */
+    transition: 0.1s;
+}
+
+input:user-invalid,
+select:user-invalid {
+    border-color: #f40606;
+}
