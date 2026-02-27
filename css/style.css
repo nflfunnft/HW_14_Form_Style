@@ -95,7 +95,8 @@ input {
     padding: 0 10px;
 }
 
-input:focus-visible {
+input:focus-visible,
+select:focus-visible {
     outline: 1px solid var(--background-btn);
 }
 
@@ -103,6 +104,7 @@ input:focus-visible {
     display: flex;
     gap: 1vw;
     justify-content: flex-start;
+    margin-bottom: 20px;
 }
 
 .gender__item label {
@@ -140,7 +142,7 @@ input:focus-visible {
     opacity: 1;
 } */
 
-/* 1. Замість display: none використовуємо цей клас */
+/* Замість display: none використовуємо цей клас */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -154,7 +156,7 @@ input:focus-visible {
     overflow: hidden;
 }
 
-/* 2. Твоя логіка відображення точки залишається майже такою самою */
+/* Логіка відображення точки залишається майже такою самою */
 /* Тільки тепер ми звертаємося до інпуту через клас */
 .visually-hidden:checked~.gender__check::after {
     opacity: 1;
@@ -162,11 +164,25 @@ input:focus-visible {
     /* Можна додати легкий ефект збільшення */
 }
 
-/* 3. ВАЖЛИВО: Додаємо стиль для фокусу, щоб користувач бачив, де він знаходиться */
+/* Додаємо стиль для фокусу, щоб користувач бачив, де він знаходиться */
 .visually-hidden:focus-visible~.gender__check {
     outline: 2px solid var(--background-btn);
     outline-offset: 3px;
     border-radius: 50%;
+}
+
+.select {
+    appearance: none;
+    /* Прибирає стандартну стрілку */
+    background-image: url(../assets/img/icon.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    /* Решта стилів як у input */
+    border: 1px solid #E4E4E4;
+    border-radius: var(--main-border-radius);
+    font-size: inherit;
+    height: 38px;
+    padding: 0 10px;
 }
 
 .btn {
@@ -183,4 +199,35 @@ input:focus-visible {
 
 .btn_min {
     width: 25%;
+}
+
+.terms-text {
+    text-align: center;
+    font-size: 13px;
+    color: #969696;
+    /* Сірий колір як на макеті */
+    margin: 22px 45px 20px 45px;
+    line-height: 1.385;
+}
+
+.terms-text a,
+.login-offer a {
+    font-family: var(--second-font-family);
+    color: var(--background-btn);
+    text-decoration: none;
+    /* Прибираємо підкреслення */
+    font-weight: 500;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #E4E4E4;
+    margin: 0;
+}
+
+.login-offer {
+    text-align: center;
+    color: #545454;
+    margin: 20px 0 1px 0;
+    line-height: 1.467;
 }
