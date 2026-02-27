@@ -143,28 +143,34 @@ select:focus-visible {
 } */
 
 /* Замість display: none використовуємо цей клас */
+/* Цей клас приховує елемент візуально, але залишає його доступним для скрінрідерів. */
 .visually-hidden {
     position: absolute;
+    /* Вибиваємо з потоку, щоб не займав місце */
     width: 1px;
+    /* Робимо розміром в 1 піксель */
     height: 1px;
     margin: -1px;
+    /* Ховаємо цей піксель */
     border: 0;
     padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
     clip: rect(0 0 0 0);
+    /* Старий спосіб обрізки */
+    clip-path: inset(50%);
+    /* Сучасний спосіб обрізки */
     overflow: hidden;
+    /* Все, що не влізло в 1px, зникає */
+    white-space: nowrap;
+    /* Щоб текст не переносився */
 }
 
-/* Логіка відображення точки залишається майже такою самою */
-/* Тільки тепер ми звертаємося до інпуту через клас */
+/* Звертаємося до інпуту через клас */
 .visually-hidden:checked~.gender__check::after {
     opacity: 1;
     transform: scale(1);
-    /* Можна додати легкий ефект збільшення */
 }
 
-/* Додаємо стиль для фокусу, щоб користувач бачив, де він знаходиться */
+/* Додаємо стиль для фокусу, щоб користувач табом та стрілочками бачив, де він знаходиться */
 .visually-hidden:focus-visible~.gender__check {
     outline: 2px solid var(--background-btn);
     outline-offset: 3px;
@@ -251,10 +257,9 @@ select:focus-visible {
     margin-bottom: 20px;
 }
 
-/* Створюємо жорсткий контейнер для фото 80x80 */
+/* Створюємо жорсткий контейнер для фото */
 .avatar-preview {
     width: 80px;
-    /* Те, що ти казав */
     height: 80px;
     flex-shrink: 0;
     /* Щоб флекс не стискав коло, якщо тексту поруч багато */
@@ -268,7 +273,7 @@ select:focus-visible {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Це магія: розтягує фото без спотворення пропорцій */
+    /* Розтягує фото без спотворення пропорцій */
     display: block;
 }
 
@@ -290,7 +295,6 @@ select:focus-visible {
     border-radius: 4px;
     cursor: pointer;
     background: url('../assets/img/camera.svg') no-repeat center right 10px;
-    /* Додай іконку камери */
 }
 
 /* Кнопка видалення (кошик) */
@@ -324,13 +328,13 @@ select:focus-visible {
     max-height: 38px;
 }
 
-/* Ефект при наведенні (Hover) */
+/* Ефект при наведенні */
 .btn:hover {
     filter: brightness(0.9);
     /* Робить кнопку на 10% темнішою */
 }
 
-/* Ефект при натисканні (Active) */
+/* Ефект при натисканні */
 .btn:active {
     filter: brightness(0.8);
     /* Ще трохи темніше при кліку */
@@ -338,7 +342,7 @@ select:focus-visible {
     /* Кнопка ніби "продавлюється" */
 }
 
-/* Для кнопки завантаження та видалення */
+/* Для кнопки завантаження */
 .upload-label:hover {
     border-color: var(--background-btn);
 }
